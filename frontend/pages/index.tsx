@@ -13,6 +13,7 @@ const client = createClient({
 
 type homeProps = {
     blogs: Array<BlogModel>
+    isOpen: boolean
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -21,9 +22,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return { props: { blogs } }
 }
 
-const Home: NextPage<homeProps> = ({ blogs }) => {
- console.log(blogs)
-  return <div></div>
+const Home: NextPage<homeProps> = ({ blogs, isOpen }) => {
+    return <div className={isOpen ? 'hidden' : 'flex w-screen'}>9uadshfad</div>
 }
 
 export default Home
