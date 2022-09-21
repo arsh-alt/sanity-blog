@@ -17,5 +17,5 @@ export interface BlogModel{
     _id: string;
     blogImage: object;
     author: AuthorModel;
-    slug: SlugModel;
+    Slug: SlugModel;
 } 
