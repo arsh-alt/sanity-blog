@@ -6,9 +6,9 @@ import { createClient } from 'next-sanity'
 import BlogCard from '../components/BlogCard'
 
 const client = createClient({
-    projectId: 'swphe1qd',
+    projectId: 'hqvbz3wi',
     dataset: 'production',
-    apiVersion: 'v1',
+    apiVersion: '2022-09-21',
     useCdn: false,
 })
 
@@ -18,14 +18,14 @@ type homeProps = {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const query = `*[_type == "blog"]` //fetching all thr blogs
+    const query = `*[_type=="blog"]` //fetching all thr blogs
     const blogs: Array<object> = await client.fetch(query)
     return { props: { blogs } }
 }
 
 const Home: NextPage<homeProps> = ({ blogs, isOpen }) => {
     return (
-        <div className={isOpen ? 'hidden' : 'flex w-screen flex-col p-3'}>
+        <div className={isOpen ? '' : 'flex w-screen flex-col p-3'}>
             {blogs.map((blog) => (
                 <BlogCard
                     title={blog.title}

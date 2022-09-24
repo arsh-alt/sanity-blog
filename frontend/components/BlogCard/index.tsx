@@ -16,9 +16,9 @@ const BlogCard = (props: Props) => {
     const { title, metadesc, slug, blogImage } = props
     const builder = imageUrlBuilder(
         createClient({
-            projectId: 'swphe1qd',
+            projectId: 'hqvbz3wi',
             dataset: 'production',
-            apiVersion: 'v1',
+            apiVersion: '2022-09-21',
             useCdn: false,
         })
     )
@@ -39,7 +39,7 @@ const BlogCard = (props: Props) => {
             />
             <h3 className="text-xl mx-4 my-2 font-bold">{title}</h3>
             <p className="text-xl mx-4 mb-1">{metadesc}</p>
-            <Link href={`blog/${slug.current}`}>
+            <Link href={`/blog/${slug.current}`}>
                 <motion.a
                     className="bg-yellow-600 mx-4 my-2 self-start w-auto font-bold rounded-xl px-3 py-1"
                     whileTap={{ scale: 0.8 }}
